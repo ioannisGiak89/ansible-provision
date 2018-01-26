@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [! -f firstrun_done]; then
+# if [! -f firstrun_done]; then
   ./firstrun.sh
-fi
+# fi
 
 ansible-playbook -i inventory base.yml $1
