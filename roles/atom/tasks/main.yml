@@ -1,0 +1,19 @@
+
+---
+  - name: Install Atom - add apt key
+    apt_key:
+      url: https://packagecloud.io/AtomEditor/atom/gpgkey
+      state: present
+    sudo: yes
+    when: ansible_os_family == 'Linux'
+
+  - name: Install Atom - Update source list
+    shell: 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+    when: ansible_os_family == 'Linux'
+
+  - name: Install Atom
+    apt:
+      name: atom
+      update_cache: yes
+    sudo: yes
+    when: ansible_os_family == 'Linux'
