@@ -1,0 +1,6 @@
+---
+- name: Write gitconfig
+  template: src=gitconfig.j2 dest=~/.gitconfig
+
+- name: Write gitignore
+  copy: src=.gitignore dest=~/.gitignore
