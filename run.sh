@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+# set -ex
 
 # return 1 if global command line program installed, else 0
 # example
