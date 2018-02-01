@@ -13,13 +13,13 @@ is_program_installed () {
 }
 
 cd ~
-if ! is_program_installed git
+if [$(is_program_installed git) == "0"]
 then
   sudo apt-get update
   sudo apt-get install git
 fi
 
-if ! is_program_installed ansible-playbook
+if [$(is_program_installed ansible-playbook) == "0"]
 then
   sudo apt-get update
   sudo apt-get install software-properties-common
@@ -28,7 +28,7 @@ then
   sudo apt-get install ansible
 fi
 
-if ! -d ~/ansible-provision
+if [! -d ~/ansible-provision]
 then
   git clone git@github.com:ioannisGiak89/ansible-provision.git
 fi
