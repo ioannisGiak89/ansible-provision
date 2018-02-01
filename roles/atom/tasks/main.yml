@@ -5,6 +5,7 @@
       url: https://packagecloud.io/AtomEditor/atom/gpgkey
       state: present
     when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    become: yes
 
   - name: Install Atom - Update source list
     shell: 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
