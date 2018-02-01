@@ -29,7 +29,7 @@ then
   sudo apt-get install ansible
 fi
 
-if [! -d ~/ansible-provision]
+if [ ! -d ~/ansible-provision ]
 then
   git clone git@github.com:ioannisGiak89/ansible-provision.git
 fi
