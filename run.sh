@@ -3,7 +3,7 @@
 # return 1 if global command line program installed, else 0
 # example
 # echo "node: $(program_is_installed git)"
-function is_program_installed {
+is_program_installed {
   # set to 1 initially
   local return_=1
   # set to 0 if not found
