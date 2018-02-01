@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# Clone the repository
 cd ~
-if [! is_program_installed git]; then
+if [! $(is_program_installed git)] then
   sudo apt-get update
   sudo apt-get install git
 fi
 
-if [! is_program_installed ansible-playbook]; then
+if [! $(is_program_installed ansible-playbook)] then
   sudo apt-get update
   sudo apt-get install software-properties-common
   sudo apt-add-repository ppa:ansible/ansible
