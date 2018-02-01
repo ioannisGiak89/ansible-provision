@@ -13,13 +13,13 @@ function is_program_installed {
 }
 
 cd ~
-if ! $(is_program_installed git)
+if ! is_program_installed git
 then
   sudo apt-get update
   sudo apt-get install git
 fi
 
-if ! $(is_program_installed ansible-playbook)
+if ! is_program_installed ansible-playbook
 then
   sudo apt-get update
   sudo apt-get install software-properties-common
