@@ -4,10 +4,10 @@
 
   roles:
     - {role: atom, tags: atom}
+    - {role: git, tags: git}
     # - {role: cask, tags: cask, when: "ansible_os_family == 'Darwin'"}
     # - {role: vim, tags: vim}
     # - {role: tmux, tags: tmux}
-    # - {role: git, tags: git}
     # - {role: home, tags: home}
     # - {role: nodejs, tags: nodejs}
     # - {role: fish, tags: fish}
