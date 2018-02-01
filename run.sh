@@ -34,7 +34,10 @@ fi
 if [ ! -d ~/ansible-provision ]
 then
   git clone https://github.com/ioannisGiak89/ansible-provision.git
+  cd ~/ansible-provision
+else
+  cd ~/ansible-provision
+  git pull
 fi
 
-cd ~/ansible-provision
 ansible-playbook -i inventory base.yml $1
