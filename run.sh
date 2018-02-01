@@ -9,17 +9,17 @@ is_program_installed () {
   # set to 0 if not found
   type $1 >/dev/null 2>&1 || { local return_=0; }
   # return value
-  echo "$return_"
+  return $return_
 }
 
 cd ~
-if [$(is_program_installed git) == "0"]
+if !is_program_installed git
 then
   sudo apt-get update
   sudo apt-get install git
 fi
 
-if [$(is_program_installed ansible-playbook) == "0"]
+if is_program_installed ansible-playbook
 then
   sudo apt-get update
   sudo apt-get install software-properties-common
