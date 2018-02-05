@@ -3,6 +3,7 @@
   - name: Install Tilix - add repo
     apt_repository:
       repo: 'ppa:webupd8team/terminix'
+      state: present
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
