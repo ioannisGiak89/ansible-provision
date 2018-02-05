@@ -14,6 +14,11 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - set Tilix as deafault terminal
-    shell: gsettings set org.gnome.desktop.default-applications.terminal exec tilix
+  - name: Install Tilix - Fix VTE issue
+    shell: ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
     when: ansible_distribution == 'Ubuntu'
+    become: yes
+
+  # - name: Install Tilix - set Tilix as deafault terminal
+  #   shell: gsettings set org.gnome.desktop.default-applications.terminal exec tilix
+  #   when: ansible_distribution == 'Ubuntu'
