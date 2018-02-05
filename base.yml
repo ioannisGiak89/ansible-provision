@@ -3,14 +3,17 @@
   connection: local
 
   roles:
-    - {role: atom, tags: atom}
+    - {role: customize-home, tags: customize-home}
     - {role: git, tags: git}
+    - {role: atom, tags: atom}
+    - {role: tilix, tags: tilix}
+    - {role: curl, tags: curl}
+    - {role: fish, tags: fish}
     # - {role: cask, tags: cask, when: "ansible_os_family == 'Darwin'"}
     # - {role: vim, tags: vim}
     # - {role: tmux, tags: tmux}
     # - {role: home, tags: home}
     # - {role: nodejs, tags: nodejs}
-    # - {role: fish, tags: fish}
     # - {role: firefox, tags: firefox}
     # - {role: virtualbox, tags: virtualbox}
     # - {role: vagrant, tags: vagrant}

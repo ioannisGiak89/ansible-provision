@@ -1,0 +1,26 @@
+
+---
+  - name: Install Fish - update & install
+    apt:
+      name: fish
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
+
+  - name: Install Fish - set Fish as deafault shell
+    shell: chsh -s /usr/bin/fish
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: Install Fish - removing default message
+    shell: |
+      mkdir ~/.config/fish
+      touch ~/.config/fish/config.fish
+      echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: Install Fish - install oh my fish
+    shell: curl -L https://get.oh-my.fish | fish
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: Install Fish - install simple-ass-prompt theme
+    shell: omf install simple-ass-prompt
+    when: ansible_distribution == 'Ubuntu'

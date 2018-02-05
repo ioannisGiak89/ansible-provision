@@ -4,17 +4,17 @@
     apt_key:
       url: https://packagecloud.io/AtomEditor/atom/gpgkey
       state: present
-    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    when: ansible_distribution == 'Ubuntu'
     become: yes
 
   - name: Install Atom - Update source list
-    shell: 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    shell: echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list
+    when: ansible_distribution == 'Ubuntu'
     become: yes
 
   - name: Install Atom
     apt:
       name: atom
       update_cache: yes
-    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    when: ansible_distribution == 'Ubuntu'
     become: yes

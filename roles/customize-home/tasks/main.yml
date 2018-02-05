@@ -1,0 +1,4 @@
+---
+  - name: Install Fish - removing default message
+    shell: mkdir ~/.config
+    when: ansible_distribution == 'Ubuntu'
