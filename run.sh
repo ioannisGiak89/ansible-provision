@@ -39,6 +39,6 @@ else
   git pull
 fi
 
-read -s -p "Enter your password: " $rootPassword
+read -sp "Enter your password: " rootPassword
 
 ansible-playbook -i inventory base.yml $1 --extra-vars "ansible_become_pass=$rootPassword"
