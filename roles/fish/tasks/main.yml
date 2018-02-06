@@ -4,6 +4,7 @@
     apt:
       name: fish
     when: ansible_distribution == 'Ubuntu'
+    become: yes
 
   # - name: Install Fish - set Fish as deafault shell
   #   shell: chsh -s /usr/bin/fish
