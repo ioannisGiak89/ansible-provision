@@ -9,12 +9,12 @@
   - name: Download {{ fish_package }}
     get_url:
       url: "{{ fish_url }}"
-      dest: /home/"{{ ansible_env.USER }}"/Downloads/"{{ fish_package }}".deb
+      dest: /home/{{ ansible_env.USER }}/Downloads/{{ fish_package }}.deb
     when: fish_package_check_deb.rc == 1
 
   - name: Install {{ fish_package }}
     apt:
-      deb: /home/"{{ ansible_env.USER }}"/Downloads/"{{ fish_package }}".deb
+      deb: /home/{{ ansible_env.USER }}/Downloads/{{ fish_package }}.deb
     when: fish_package_check_deb.rc == 1
     become: yes
   # - name: Install Fish - set Fish as deafault shell
