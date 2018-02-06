@@ -3,19 +3,22 @@
   - name: Install Tilix - add repo
     apt_repository:
       repo: 'ppa:webupd8team/terminix'
+      update_cache: yes
       state: present
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - update & install
+  - name: Install Tilix - install
     apt:
       name: tilix
-      update_cache: yes
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - Fix VTE issue
-    shell: ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+  - name: Install Tilix - Fix VTE issue (create symlink)
+    file:
+      src: /etc/profile.d/vte-2.91.sh
+      dest: /etc/profile.d/vte.sh
+      state: link
     when: ansible_distribution == 'Ubuntu'
     become: yes
 

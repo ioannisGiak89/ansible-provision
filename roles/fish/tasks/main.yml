@@ -1,6 +1,6 @@
 
 ---
-  - name: Install Fish - update & install
+  - name: Install Fish
     apt:
       name: fish
     when: ansible_distribution == 'Ubuntu'
