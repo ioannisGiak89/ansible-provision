@@ -11,17 +11,20 @@
   #   when: ansible_distribution == 'Ubuntu'
   #   become: yes
 
-  - name: Install Fish - removing default message
+  - name: Install Fish - Create config directory
     file:
       path:  ~/.config/fish
       state: directory
       mode: 0775
+      
+  - name: Install Fish - Create config file
     file:
       path: ~/.config/fish/config.fish
       state: touch
       mode: 0664
+
+  - name: Install Fish - Remove welcome message
     shell: echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
-    when: ansible_distribution == 'Ubuntu'
 
   - name: Install Fish - install oh my fish
     shell: curl -L https://get.oh-my.fish | fish
