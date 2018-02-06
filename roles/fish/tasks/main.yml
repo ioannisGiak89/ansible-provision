@@ -12,15 +12,21 @@
   #   become: yes
 
   - name: Install Fish - removing default message
-    shell: |
-      mkdir ~/.config/fish
-      touch ~/.config/fish/config.fish
-      echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
+    file:
+      path:  ~/.config/fish
+      state: directory
+      mode: 0775
+    file:
+      path: ~/.config/fish/config.fish
+      state: touch
+      mode: 0664
+    shell: echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
     when: ansible_distribution == 'Ubuntu'
 
   - name: Install Fish - install oh my fish
     shell: curl -L https://get.oh-my.fish | fish
     when: ansible_distribution == 'Ubuntu'
+    become: yes
 
   - name: Install Fish - install simple-ass-prompt theme
     shell: omf install simple-ass-prompt
