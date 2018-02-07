@@ -1,0 +1,6 @@
+---
+  - name: Install pexpect
+    apt:
+      name: pexpect
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

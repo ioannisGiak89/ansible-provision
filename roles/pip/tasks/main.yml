@@ -1,0 +1,6 @@
+---
+  - name: Install pip
+    apt:
+      name: pip
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
