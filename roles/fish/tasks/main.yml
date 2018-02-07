@@ -15,11 +15,10 @@
     become: yes
 
   - name: Install Fish - set Fish as deafault shell
-    user:
-      name: "{{ ansible_env.USER }}"
-      shell: /bin/bash
-    when: ansible_distribution == 'Ubuntu'
-    become: yes
+    expect:
+      command: "chsh -s /usr/bin/fish"
+      responses:
+        (?i)password: "{{ ansible_become_pass }}"
 
   - name: Install Fish - Create config directory
     file:
@@ -36,11 +35,11 @@
   - name: Install Fish - Remove welcome message
     shell: echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
 
-  - name: Install Fish - install oh my fish
-    shell: "curl -L https://get.oh-my.fish | fish"
-    when: ansible_distribution == 'Ubuntu'
-    become: yes
-
-  - name: Install Fish - install simple-ass-prompt theme
-    shell: omf install simple-ass-prompt
-    when: ansible_distribution == 'Ubuntu'
+  # - name: Install Fish - install oh my fish
+  #   shell: "curl -L https://get.oh-my.fish | fish"
+  #   when: ansible_distribution == 'Ubuntu'
+  #   become: yes
+  #
+  # - name: Install Fish - install simple-ass-prompt theme
+  #   shell: omf install simple-ass-prompt
+  #   when: ansible_distribution == 'Ubuntu'

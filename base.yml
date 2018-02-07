@@ -2,6 +2,11 @@
 - hosts: local
   connection: local
 
+  vars_prompt:
+  - name: ansible_become_pass
+    prompt: "Enter password"
+    private: yes
+
   roles:
     # - {role: customize-home, tags: customize-home}
     - {role: git, tags: git}
