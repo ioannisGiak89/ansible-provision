@@ -19,6 +19,7 @@
       name: "{{ ansible_env.USER }}"
       shell: /bin/bash
     when: ansible_distribution == 'Ubuntu'
+    become: yes
 
   - name: Install Fish - Create config directory
     file:
