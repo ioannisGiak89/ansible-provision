@@ -22,6 +22,6 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - set Tilix as deafault terminal
+  - name: Install Tilix - set Tilix as default terminal
     shell: gsettings set org.gnome.desktop.default-applications.terminal exec tilix
     when: ansible_distribution == 'Ubuntu'
