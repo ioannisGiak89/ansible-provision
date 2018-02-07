@@ -17,8 +17,8 @@
     # - {role: pexpect, tags: pexpect}
     # - {role: fish, tags: fish}
     - {role: chrome, tags: chrome}
-    - {role:dropbox, tags: dropbox}
-    - {role:firefox, tags: firefox}
+    - {role: dropbox, tags: dropbox}
+    - {role: firefox, tags: firefox}
     # - {role: cask, tags: cask, when: "ansible_os_family == 'Darwin'"}
     # - {role: vim, tags: vim}
     # - {role: tmux, tags: tmux}
