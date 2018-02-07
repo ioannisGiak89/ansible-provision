@@ -1,31 +1,18 @@
 
 ---
-  - name: Check if {{ fish_package }} is installed
-    command: dpkg-query -W {{ fish_package }}
-    register: fish_package_check_deb
-    failed_when: fish_package_check_deb.rc > 1
-    changed_when: fish_package_check_deb.rc == 1
-
-  - name: Download {{ fish_package }}
-    get_url:
-      url: "{{ fish_url }}"
-      dest: /home/{{ ansible_env.USER }}/Downloads/{{ fish_package }}.deb
-    when: fish_package_check_deb.rc == 1
-
-  # - name: Install {{ fish_package }}
-  #   apt:
-  #     deb: "{{ fish_url }}"
-  #     update_cache: yes
-  #   when: fish_package_check_deb.rc == 1
-  #   become: yes
-
-  - name: Install {{ fish_package }}
-    shell: |
-      dpkg -i /home/{{ ansible_env.USER }}/Downloads/{{ fish_package }}.deb
-      apt-get install -f -y
-    when: fish_package_check_deb.rc == 1
+  - name: Install Fish - add repository
+    apt_repository:
+      repo: 'ppa:fish-shell/release-2'
+      update_cache: yes
+      state: present
+    when: ansible_distribution == 'Ubuntu'
     become: yes
 
+  - name: Install Fish - install
+    apt:
+      name: fish
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
 
   # - name: Install Fish - set Fish as deafault shell
   #   shell: chsh -s /usr/bin/fish
