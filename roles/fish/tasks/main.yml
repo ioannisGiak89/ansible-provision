@@ -22,7 +22,7 @@
   - name: Install {{ fish_package }}
     shell: |
       dpkg -i /home/{{ ansible_env.USER }}/Downloads/{{ fish_package }}.deb
-      apt-get install -f
+      apt-get install -f -y
     when: fish_package_check_deb.rc == 1
     become: yes
 
