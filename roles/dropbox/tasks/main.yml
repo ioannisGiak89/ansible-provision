@@ -1,0 +1,6 @@
+---
+  - name: "Install dropbox"
+    apt:
+      name: nautilus-dropbox
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

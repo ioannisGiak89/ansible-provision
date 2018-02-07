@@ -7,14 +7,17 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Atom - Update source list
-    shell: echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list
+  - name: Install Atom - add repo
+    apt_repository:
+      repo: "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
+      filename: "google-chrome"
+      state: present
+      update_cache: yes
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
   - name: Install Atom
     apt:
       name: atom
-      update_cache: yes
     when: ansible_distribution == 'Ubuntu'
     become: yes
