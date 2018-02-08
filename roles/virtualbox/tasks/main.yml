@@ -1,12 +1,12 @@
 ---
-  - name: Install Virtual Box - add apt key
+  - name: Install VirtualBox - add apt key
     apt_key:
       url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
       state: present
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Atom - add repo
+  - name: Install VirtualBox - add repo
     apt_repository:
       repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian xenial contrib"
       state: present
@@ -14,7 +14,7 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Atom
+  - name: Install VirtualBox
     apt:
       name: virtualbox-5.2
     when: ansible_distribution == 'Ubuntu'
