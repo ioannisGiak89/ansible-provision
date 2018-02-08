@@ -22,12 +22,12 @@
     - {role: virtualbox, tags: virtualbox}
     - {role: vagrant, tags: vagrant}
     - {role: ag, tags: ag}
-    - {role: slack, tags: slack}
+    # - {role: slack, tags: slack}
     - {role: skype, tags: skype}
     - {role: mysql_workbench, tags: mysql_workbench}
     - {role: tree, tags: tree}
     - {role: htop, tags: htop}
     - {role: tid, tags: tid}
-    
+
     # - {role: vim, tags: vim}
     # - {role: tmux, tags: tmux}

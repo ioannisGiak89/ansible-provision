@@ -1,4 +1,12 @@
 ---
+  - name: Install Atom - add repo
+    apt_repository:
+      repo: "deb https://dev.mysql.com/downloads/file/?id=474129 xenial stable"
+      state: present
+      update_cache: yes
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
+
   - name: Install Mysql Workbench
     apt:
       name: mysql-workbench-community
