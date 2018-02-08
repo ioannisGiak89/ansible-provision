@@ -1,7 +1,7 @@
 ---
-  - name: Install Atom - add repo
+  - name: Install Mysql Workbench - add repo
     apt_repository:
-      repo: deb https://dev.mysql.com/downloads/file/?id=474129
+      repo: deb https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
       state: present
       update_cache: yes
     when: ansible_distribution == 'Ubuntu'
