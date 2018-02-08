@@ -1,8 +1,8 @@
 ---
-  - name: Install tid - Download
+  - name: Install Mysql Workbench - Download
     get_url:
       url: https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
-      tmp_dest: /tmp/mysql-apt-config_0.8.9-1_all.deb
+      dest: /tmp/mysql-apt-config_0.8.9-1_all.deb
 
   - name: Install Mysql Workbench - add repo
     command: dpkg -i /tmp/mysql-apt-config_0.8.9-1_all.deb
