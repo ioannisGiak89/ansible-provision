@@ -1,0 +1,14 @@
+---
+  - name: Install Go - add repo
+    apt_repository:
+      repo: 'ppa:longsleep/golang-backports'
+      update_cache: yes
+      state: present
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
+
+  - name: Install Go
+    apt:
+      name: golang-go
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

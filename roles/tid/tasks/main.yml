@@ -1,8 +1,3 @@
 ---
-  - name: Install tid - Download
-    get_url:
-      url: https://raw.githubusercontent.com/SeerUK/tid/master/install.sh
-      dest: /tmp/tid_install.sh
-
   - name: Install tid
-    command: sh /tmp/tid_install.sh
+    command: go get -u -v github.com/SeerUK/tid/...
