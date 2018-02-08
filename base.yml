@@ -8,7 +8,7 @@
     private: yes
 
   roles:
-    - {role: customize-home, tags: customize-home}
+    # - {role: customize-home, tags: customize-home}
     - {role: git, tags: git}
     - {role: atom, tags: atom}
     - {role: tilix, tags: tilix}
