@@ -1,17 +1,17 @@
 ---
-  - name: Install Skype - Enable partners repos(Non source code)
-    command: 'sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list'
-    when: ansible_distribution == 'Ubuntu'
-    become: yes
+  # - name: Install Skype - Enable partners repos(Non source code)
+  #   command: 'sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list'
+  #   when: ansible_distribution == 'Ubuntu'
+  #   become: yes
+  #
+  # - name: Install Skype - update apt cache
+  #   apt:
+  #     update_cache: yes
+  #   when: ansible_distribution == 'Ubuntu'
+  #   become: yes
 
-  - name: Install Skype - update apt cache
-    apt:
-      update_cache: yes
-    when: ansible_distribution == 'Ubuntu'
-    become: yes
-    
   - name: Install Skype
     apt:
-      name: skypeforlinux
+      deb: https://go.skype.com/skypeforlinux-64.deb
     when: ansible_distribution == 'Ubuntu'
     become: yes
