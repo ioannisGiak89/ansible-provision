@@ -1,7 +1,7 @@
 ---
   - name: Install Atom - add repo
     apt_repository:
-      repo: "deb https://dev.mysql.com/downloads/file/?id=474129 xenial stable"
+      repo: deb https://dev.mysql.com/downloads/file/?id=474129
       state: present
       update_cache: yes
     when: ansible_distribution == 'Ubuntu'
