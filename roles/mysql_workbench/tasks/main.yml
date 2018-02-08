@@ -1,9 +1,11 @@
 ---
+  - name: Install tid - Download
+    get_url:
+      url: https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
+      tmp_dest: /tmp/mysql-apt-config_0.8.9-1_all.deb
+
   - name: Install Mysql Workbench - add repo
-    apt_repository:
-      repo: deb https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
-      state: present
-      update_cache: yes
+    command: dpkg -i /tmp/mysql-apt-config_0.8.9-1_all.deb
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
