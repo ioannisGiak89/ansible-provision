@@ -1,0 +1,6 @@
+---
+  - name: Install ag
+    apt:
+      name: silversearcher-ag
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

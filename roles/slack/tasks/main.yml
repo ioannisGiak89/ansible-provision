@@ -1,0 +1,5 @@
+---
+  - name: Install Slack
+    command: snap install slack --clasic
+    become: yes
+    when: ansible_distribution == 'Ubuntu'

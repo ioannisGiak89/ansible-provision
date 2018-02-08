@@ -1,0 +1,6 @@
+---
+  - name: Install Skype
+    apt:
+      name: skypeforlinux
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

@@ -1,0 +1,6 @@
+---
+  - name: Install Mysql Workbench
+    apt:
+      name: mysql-workbench-community
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

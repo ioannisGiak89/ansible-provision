@@ -1,0 +1,6 @@
+---
+  - name: Install Tree
+    apt:
+      name: tree
+    when: ansible_distribution == 'Ubuntu'
+    become: yes

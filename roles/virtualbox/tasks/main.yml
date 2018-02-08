@@ -1,15 +1,14 @@
 ---
-  - name: Install Atom - add apt key
+  - name: Install Virtual Box - add apt key
     apt_key:
-      url: https://packagecloud.io/AtomEditor/atom/gpgkey
+      url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
       state: present
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
   - name: Install Atom - add repo
     apt_repository:
-      repo: "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
-      filename: "google-chrome"
+      repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian xenial contrib"
       state: present
       update_cache: yes
     when: ansible_distribution == 'Ubuntu'
@@ -17,6 +16,12 @@
 
   - name: Install Atom
     apt:
-      name: atom
+      name: virtualbox-5.2
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
+
+  - name: Install dkms
+    apt:
+      name: dkms
     when: ansible_distribution == 'Ubuntu'
     become: yes

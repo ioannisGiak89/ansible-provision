@@ -1,0 +1,6 @@
+---
+  - name: Install Htop
+    apt:
+      name: htop
+    when: ansible_distribution == 'Ubuntu'
+    become: yes
