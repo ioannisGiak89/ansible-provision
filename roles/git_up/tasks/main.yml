@@ -1,0 +1,5 @@
+---
+  - name: Install git-up
+    pip:
+      name: git-up
+    when: ansible_distribution == 'Ubuntu'

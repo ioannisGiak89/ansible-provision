@@ -10,10 +10,17 @@
   - name: Install Go
     apt:
       name: golang-go
+      update_cache: yes
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Go - Set GOPATH
+  - name: Install Go - Create workspace for Go projects
+    file:
+      path:  ~/.go
+      state: directory
+      mode: 0775
+
+ - name: Install Go - Set GOPATH
     lineinfile:
       path: ~/.config/fish/config.fish
       create: yes
