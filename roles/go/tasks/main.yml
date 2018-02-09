@@ -20,7 +20,7 @@
       state: directory
       mode: 0775
 
- - name: Install Go - Set GOPATH
+  - name: Install Go - Set GOPATH
     lineinfile:
       path: ~/.config/fish/config.fish
       create: yes
