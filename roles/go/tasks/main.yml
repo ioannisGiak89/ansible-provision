@@ -12,3 +12,21 @@
       name: golang-go
     when: ansible_distribution == 'Ubuntu'
     become: yes
+
+  - name: Install Go - Set GOPATH
+    lineinfile:
+      path: ~/.config/fish/config.fish
+      create: yes
+      mode: 0664
+      insertbefore: BOF
+      line: set -gx GOPATH $HOME/.go
+      state: present
+
+  - name: Install Go - Add GOPATH to PATH
+    lineinfile:
+      path: ~/.config/fish/config.fish
+      create: yes
+      mode: 0664
+      insertafter: set -gx GOPATH $HOME/.go
+      line: set -gx PATH $GOPATH/bin $PATH
+      state: present

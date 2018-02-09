@@ -25,14 +25,14 @@
       state: directory
       mode: 0775
 
-  - name: Install Fish - Create config file
-    file:
-      path: ~/.config/fish/config.fish
-      state: touch
-      mode: 0664
-
   - name: Install Fish - Remove welcome message
-    shell: echo 'set -g -x fish_greeting ""' >> ~/.config/fish/config.fish
+    lineinfile:
+      path: ~/.config/fish/config.fish
+      create: yes
+      mode: 0664
+      insertafter: EOF
+      line: set -gx fish_greeting ""
+      state: present
 
   # - name: Install Fish - install oh my fish
   #   shell: "curl -L https://get.oh-my.fish | fish"
