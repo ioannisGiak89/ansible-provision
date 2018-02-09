@@ -3,5 +3,6 @@
     apt:
       name: firefox
       update_cache: yes
+      state: latest
     when: ansible_distribution == 'Ubuntu'
     become: yes
