@@ -8,28 +8,27 @@
     private: yes
 
   roles:
-    # - {role: customize-home, tags: customize-home}
-    # - {role: chrome, tags: chrome}
-    # - {role: git, tags: git}
-    # - {role: atom, tags: atom}
+    - {role: chrome, tags: chrome}
+    - {role: git, tags: git}
+    - {role: atom, tags: atom}
     - {role: tilix, tags: tilix}
-    # - {role: curl, tags: curl}
-    # - {role: pip, tags: pip}
-    # - {role: pexpect, tags: pexpect}
+    - {role: curl, tags: curl}
+    - {role: pip, tags: pip}
+    - {role: pexpect, tags: pexpect}
     - {role: fish, tags: fish}
-    # - {role: dropbox, tags: dropbox}
-    # - {role: firefox, tags: firefox}
-    # - {role: virtualbox, tags: virtualbox}
-    # - {role: vagrant, tags: vagrant}
-    # - {role: ag, tags: ag}
-    # - {role: slack, tags: slack}
-    # - {role: skype, tags: skype}
+    - {role: dropbox, tags: dropbox}
+    - {role: firefox, tags: firefox}
+    - {role: virtualbox, tags: virtualbox}
+    - {role: vagrant, tags: vagrant}
+    - {role: ag, tags: ag}
+    - {role: slack, tags: slack}
+    - {role: skype, tags: skype}
     - {role: mysql, tags: mysql}
-    # - {role: mysql_workbench, tags: mysql_workbench}
-    # - {role: tree, tags: tree}
-    # - {role: htop, tags: htop}
-    # - {role: go, tags: go}
-    # - {role: tid, tags: tid}
-    # - {role: git_up, tags: git_up}
+    - {role: mysql_workbench, tags: mysql_workbench}
+    - {role: tree, tags: tree}
+    - {role: htop, tags: htop}
+    - {role: go, tags: go}
+    - {role: tid, tags: tid}
+    - {role: git_up, tags: git_up}
     - {role: vim, tags: vim}
-    # - {role: tmux, tags: tmux}
+    - {role: tmux, tags: tmux}

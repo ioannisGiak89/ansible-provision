@@ -19,7 +19,6 @@
       state: started
 
   - name: update mysql root password for all root accounts
-    sudo: yes
     mysql_user:
       name: root
       host: local
@@ -28,3 +27,4 @@
       login_password: password
       check_implicit_admin: yes
       priv: "*.*:ALL,GRANT"
+      
