@@ -31,4 +31,3 @@
     - {role: tid, tags: tid}
     - {role: git_up, tags: git_up}
     - {role: vim, tags: vim}
-    - {role: tmux, tags: tmux}
