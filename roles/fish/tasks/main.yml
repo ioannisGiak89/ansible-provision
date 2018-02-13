@@ -25,20 +25,19 @@
       state: directory
       mode: 0775
 
-  - name: Install Fish - Remove welcome message
-    lineinfile:
-      path: ~/.config/fish/config.fish
-      create: yes
-      mode: 0664
-      insertafter: EOF
-      line: set -gx fish_greeting ""
-      state: present
+  - name: Install Fish - create symlink to config file
+    file:
+      src: config.fish
+      dest: ~/.config/fish/config.fish
+      state: link
 
-  # - name: Install Fish - install oh my fish
-  #   shell: "curl -L https://get.oh-my.fish | fish"
-  #   when: ansible_distribution == 'Ubuntu'
-  #   become: yes
-  #
-  # - name: Install Fish - install simple-ass-prompt theme
-  #   shell: omf install simple-ass-prompt
-  #   when: ansible_distribution == 'Ubuntu'
+  - name: Download oh-my-fishs
+    get_url:
+      url: https://get.oh-my.fish
+      dest: ~/Downloads/install-oh-my-fish.fish
+
+  - name: Install Fish - install oh my fish
+    command: fish ~/Downloads/install-oh-my-fish.fish
+
+  - name: Install Fish - install simple-ass-prompt theme
+    shell: omf install simple-ass-prompt

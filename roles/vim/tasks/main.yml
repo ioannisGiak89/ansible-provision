@@ -1,0 +1,12 @@
+---
+  - name: Create symlink to .vim
+    file:
+      src: .vim
+      dest: ~/.vim
+      state: link
+
+  - name: Create symlink to .vimrc
+    file:
+      src: .vimrc
+      dest: ~/.vimrc
+      state: link

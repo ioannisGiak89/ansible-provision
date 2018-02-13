@@ -13,14 +13,18 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - Fix VTE issue (create symlink)
-    file:
-      src: /etc/profile.d/vte-2.91.sh
-      dest: /etc/profile.d/vte.sh
-      state: link
-    when: ansible_distribution == 'Ubuntu'
-    become: yes
+  # - name: Install Tilix - Fix VTE issue (create symlink)
+  #   file:
+  #     src: /etc/profile.d/vte-2.91.sh
+  #     dest: /etc/profile.d/vte.sh
+  #     state: link
+  #   when: ansible_distribution == 'Ubuntu'
+  #   become: yes
 
   - name: Install Tilix - set Tilix as default terminal
     shell: gsettings set org.gnome.desktop.default-applications.terminal exec tilix
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: Install Tilix - Load tilix configuration
+    shell: dconf load /com/gexperts/Terminix/ < {{ role_path }}/files/tilix.dconf
     when: ansible_distribution == 'Ubuntu'

@@ -1,0 +1,25 @@
+[/]
+new-window-inherit-state=false
+copy-on-select=true
+terminal-title-style='small'
+theme-variant='dark'
+session-name='${username} at ${directory}'
+control-scroll-zoom=true
+quake-hide-headerbar=false
+window-style='disable-csd-hide-toolbar'
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#9CC2C3'
+cjk-utf8-ambiguous-width='narrow'
+visible-name='Default'
+palette=['#002831', '#D11C24', '#6CBE6C', '#A57706', '#2176C7', '#C61C6F', '#259286', '#EAE3CB', '#006488', '#F5163B', '#51EF84', '#B27E28', '#178EC8', '#E24D8E', '#00B39E', '#FCF4DC']
+badge-color-set=false
+show-scrollbar=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+scrollback-unlimited=true
+background-color='#001E27'
+background-transparency-percent=0
+dim-transparency-percent=0
