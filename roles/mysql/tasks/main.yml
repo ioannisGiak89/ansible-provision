@@ -1,7 +1,7 @@
 ---
   - name: Install Mysql Server
     apt:
-      name: {{ item }}
+      name: "{{ item }}"
       update_cache: yes
       state: installed
     when: ansible_distribution == 'Ubuntu'
