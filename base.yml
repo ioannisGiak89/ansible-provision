@@ -24,7 +24,6 @@
     - {role: ag, tags: ag}
     - {role: slack, tags: slack}
     - {role: skype, tags: skype}
-    - {role: mysql, tags: mysql}
     - {role: mysql_workbench, tags: mysql_workbench}
     - {role: tree, tags: tree}
     - {role: htop, tags: htop}
