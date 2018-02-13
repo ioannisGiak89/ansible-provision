@@ -15,6 +15,7 @@
     - {role: curl, tags: curl}
     - {role: pip, tags: pip}
     - {role: pexpect, tags: pexpect}
+    - {role: go, tags: go}
     - {role: fish, tags: fish}
     - {role: dropbox, tags: dropbox}
     - {role: firefox, tags: firefox}
@@ -27,7 +28,6 @@
     - {role: mysql_workbench, tags: mysql_workbench}
     - {role: tree, tags: tree}
     - {role: htop, tags: htop}
-    - {role: go, tags: go}
     - {role: tid, tags: tid}
     - {role: git_up, tags: git_up}
     - {role: vim, tags: vim}
