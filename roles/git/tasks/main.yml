@@ -6,6 +6,6 @@
 
 - name: Create symlink to gitignore
   file:
-    src: files/.gitignore
+    src: "{{ role_path }}"/files/.gitignore
     dest: ~/.gitignore
     state: link
