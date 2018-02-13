@@ -1,5 +1,5 @@
 ---
-  - name: Install Firefox - install
+  - name: Install
     apt:
       name: firefox
       update_cache: yes

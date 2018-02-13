@@ -1,5 +1,5 @@
 ---
-  - name: Install Fish - add repository
+  - name: Add repository
     apt_repository:
       repo: 'ppa:fish-shell/release-2'
       update_cache: yes
@@ -7,27 +7,27 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Fish - install
+  - name: Install
     apt:
       name: fish
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Fish - set Fish as deafault shell
+  - name: Set Fish as deafault shell
     expect:
       command: "chsh -s /usr/bin/fish"
       responses:
         (?i)password: "{{ ansible_become_pass }}"
 
-  - name: Install Fish - Create config directory
+  - name: Create config directory
     file:
       path:  ~/.config/fish
       state: directory
       mode: 0775
 
-  - name: Install Fish - create symlink to config file
+  - name: Create symlink to config file
     file:
-      src: config.fish
+      src: "{{ role_path }}/files/config.fish"
       dest: ~/.config/fish/config.fish
       state: link
 
@@ -36,8 +36,8 @@
       url: https://get.oh-my.fish
       dest: ~/Downloads/install-oh-my-fish.fish
 
-  - name: Install Fish - install oh my fish
+  - name: Install oh my fish
     command: fish ~/Downloads/install-oh-my-fish.fish
 
-  - name: Install Fish - install simple-ass-prompt theme
+  - name: Install simple-ass-prompt theme
     shell: omf install simple-ass-prompt

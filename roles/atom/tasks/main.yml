@@ -1,12 +1,12 @@
 ---
-  - name: Install Atom - add apt key
+  - name: Add apt key
     apt_key:
       url: https://packagecloud.io/AtomEditor/atom/gpgkey
       state: present
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Atom - add repo
+  - name: Add repo
     apt_repository:
       repo: "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
       filename: "google-chrome"
@@ -15,7 +15,7 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Atom
+  - name: Install
     apt:
       name: atom
     when: ansible_distribution == 'Ubuntu'
