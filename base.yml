@@ -16,7 +16,6 @@
     - {role: pip, tags: pip}
     - {role: pexpect, tags: pexpect}
     - {role: go, tags: go}
-    - {role: fish, tags: fish}
     - {role: dropbox, tags: dropbox}
     - {role: firefox, tags: firefox}
     - {role: virtualbox, tags: virtualbox}
@@ -30,3 +29,4 @@
     - {role: tid, tags: tid}
     - {role: git_up, tags: git_up}
     - {role: vim, tags: vim}
+    - {role: fish, tags: fish}
