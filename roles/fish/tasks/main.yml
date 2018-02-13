@@ -31,7 +31,7 @@
       dest: ~/Downloads/install-oh-my-fish.fish
 
   - name: Install oh-my-fish
-    command: fish ~/Downloads/install-oh-my-fish.fish
+    command: fish -c ". ~/Downloads/install-oh-my-fish.fish"
 
   - name: Install simple-ass-prompt theme
     command: fish -c "omf install simple-ass-prompt"
