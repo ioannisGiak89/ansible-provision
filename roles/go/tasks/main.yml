@@ -1,5 +1,5 @@
 ---
-  - name: Install Go - add repo
+  - name: Add repo
     apt_repository:
       repo: 'ppa:longsleep/golang-backports'
       update_cache: yes
@@ -14,13 +14,13 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Go - Create workspace for Go projects
+  - name: Create workspace for Go projects
     file:
       path:  ~/.go
       state: directory
       mode: 0775
 
-  - name: Install Go - Set GOPATH
+  - name: Set GOPATH
     lineinfile:
       path: ~/.config/fish/config.fish
       create: yes
@@ -29,7 +29,7 @@
       line: set -gx GOPATH $HOME/.go
       state: present
 
-  - name: Install Go - Add GOPATH to PATH
+  - name: Add GOPATH to PATH
     lineinfile:
       path: ~/.config/fish/config.fish
       create: yes

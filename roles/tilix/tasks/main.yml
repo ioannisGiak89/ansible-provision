@@ -1,5 +1,5 @@
 ---
-  - name: Install Tilix - add repo
+  - name: Add repo
     apt_repository:
       repo: 'ppa:webupd8team/terminix'
       update_cache: yes
@@ -7,7 +7,7 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Tilix - install
+  - name: Install
     apt:
       name: tilix
     when: ansible_distribution == 'Ubuntu'
@@ -21,10 +21,10 @@
   #   when: ansible_distribution == 'Ubuntu'
   #   become: yes
 
-  - name: Install Tilix - set Tilix as default terminal
+  - name: Set Tilix as default terminal
     shell: gsettings set org.gnome.desktop.default-applications.terminal exec tilix
     when: ansible_distribution == 'Ubuntu'
 
-  - name: Install Tilix - Load tilix configuration
+  - name: Load tilix configuration
     shell: dconf load /com/gexperts/Terminix/ < "{{ role_path }}/files/tilix.dconf"
     when: ansible_distribution == 'Ubuntu'
