@@ -1,5 +1,5 @@
 ---
-  - name: Install Mysql Server
+  - name: Install
     apt:
       name: "{{ item }}"
       update_cache: yes
@@ -24,6 +24,7 @@
       host: local
       password: password
       login_user: root
-      login_password: password
+      login_password: ""
       check_implicit_admin: yes
       priv: "*.*:ALL,GRANT"
+      

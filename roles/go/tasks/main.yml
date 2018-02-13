@@ -7,7 +7,7 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install Go
+  - name: Install
     apt:
       name: golang-go
       update_cache: yes

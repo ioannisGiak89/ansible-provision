@@ -1,5 +1,5 @@
 ---
-  - name: Install pexpect
+  - name: Install
     pip:
       name: pexpect
     when: ansible_distribution == 'Ubuntu'

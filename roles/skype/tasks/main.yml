@@ -1,5 +1,5 @@
 ---
-  - name: Install Skype
+  - name: Install
     apt:
       deb: https://go.skype.com/skypeforlinux-64.deb
     when: ansible_distribution == 'Ubuntu'

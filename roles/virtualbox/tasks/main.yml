@@ -14,7 +14,7 @@
     when: ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install VirtualBox
+  - name: Install
     apt:
       name: virtualbox-5.2
     when: ansible_distribution == 'Ubuntu'

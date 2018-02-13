@@ -1,5 +1,5 @@
 ---
-  - name: Install vagrant
+  - name: Install
     apt:
       name: vagrant
       update_cache: yes
