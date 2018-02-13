@@ -1,12 +1,12 @@
 ---
   - name: Create symlink to .vim
     file:
-      src: .vim
+      src: "{{ role_path }}/files/.vim"
       dest: ~/.vim
       state: link
 
   - name: Create symlink to .vimrc
     file:
-      src: .vimrc
+      src: "{{ role_path }}/files/.vimrc"
       dest: ~/.vimrc
       state: link
