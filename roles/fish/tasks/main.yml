@@ -40,4 +40,4 @@
     command: fish ~/Downloads/install-oh-my-fish.fish
 
   - name: Install simple-ass-prompt theme
-    shell: omf install simple-ass-prompt
+    comand: fish -c "omf install simple-ass-prompt"
