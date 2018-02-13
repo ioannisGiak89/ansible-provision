@@ -3,9 +3,9 @@
   template:
     src: gitconfig.j2
     dest: ~/.gitconfig
-    
+
 - name: Create symlink to gitignore
   file:
-    src: .gitignore
+    src: files/.gitignore
     dest: ~/.gitignore
     state: link
