@@ -19,4 +19,4 @@ setenv -x LESS_TERMCAP_ue (set_color normal)
 setenv -x LESS_TERMCAP_us (set_color -o green)
 
 # Alias
-. (pwd)/alias.fish
+. (pwd)/ansible-provision/fish/files/alias.fish

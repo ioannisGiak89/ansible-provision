@@ -16,24 +16,6 @@
 
   - name: Create workspace for Go projects
     file:
-      path:  ~/.go
+      path:  ~/.go/bin
       state: directory
       mode: 0775
-
-  - name: Set GOPATH
-    lineinfile:
-      path: ~/.config/fish/config.fish
-      create: yes
-      mode: 0664
-      insertbefore: BOF
-      line: set -gx GOPATH $HOME/.go
-      state: present
-
-  - name: Add GOPATH to PATH
-    lineinfile:
-      path: ~/.config/fish/config.fish
-      create: yes
-      mode: 0664
-      insertafter: set -gx GOPATH $HOME/.go
-      line: set -gx PATH $GOPATH/bin $PATH
-      state: present

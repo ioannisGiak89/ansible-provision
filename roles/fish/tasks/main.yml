@@ -31,12 +31,12 @@
       dest: ~/.config/fish/config.fish
       state: link
 
-  - name: Download oh-my-fishs
+  - name: Download oh-my-fish
     get_url:
       url: https://get.oh-my.fish
       dest: ~/Downloads/install-oh-my-fish.fish
 
-  - name: Install oh my fish
+  - name: Install oh-my-fish
     command: fish ~/Downloads/install-oh-my-fish.fish
 
   - name: Install simple-ass-prompt theme
