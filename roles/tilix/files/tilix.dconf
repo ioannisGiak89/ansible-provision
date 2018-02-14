@@ -9,10 +9,11 @@ quake-hide-headerbar=false
 window-style='disable-csd-hide-toolbar'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-foreground-color='#9CC2C3'
+foreground-color='#829395'
 cjk-utf8-ambiguous-width='narrow'
 visible-name='Default'
-palette=['#002831', '#D11C24', '#6CBE6C', '#A57706', '#2176C7', '#C61C6F', '#259286', '#EAE3CB', '#006488', '#F5163B', '#51EF84', '#B27E28', '#178EC8', '#E24D8E', '#00B39E', '#FCF4DC']
+login-shell=true
+palette=['#063541', '#DB312E', '#849900', '#B48800', '#258AD1', '#D23581', '#29A097', '#EDE7D4', '#002A35', '#CA4A15', '#576D74', '#647A82', '#829395', '#6B70C3', '#92A0A0', '#FCF5E2']
 badge-color-set=false
 show-scrollbar=false
 cursor-colors-set=false
@@ -20,6 +21,6 @@ highlight-colors-set=false
 use-theme-colors=false
 bold-color-set=false
 scrollback-unlimited=true
-background-color='#001E27'
+background-color='#002A35'
 background-transparency-percent=0
 dim-transparency-percent=0
