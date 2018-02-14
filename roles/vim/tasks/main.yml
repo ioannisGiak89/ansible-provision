@@ -1,4 +1,14 @@
 ---
+  - name: Install
+    apt:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+      update_cache: yes
+    become: yes
+    with_items:
+      - { name: "vim-tiny", state: "absent" }
+      - { name: "vim", state: "present" }
+      
   - name: Create symlink to .vim
     file:
       src: "{{ role_path }}/files/.vim"
