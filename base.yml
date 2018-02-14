@@ -11,7 +11,7 @@
     # - {role: chrome, tags: chrome}
     # - {role: git, tags: git}
     # - {role: atom, tags: atom}
-    # - {role: tilix, tags: tilix}
+    - {role: tilix, tags: tilix}
     # - {role: curl, tags: curl}
     # - {role: pip, tags: pip}
     # - {role: pexpect, tags: pexpect}
