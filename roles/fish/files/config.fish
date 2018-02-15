@@ -20,4 +20,4 @@ set -gx LESS_TERMCAP_ue (set_color normal)
 set -gx LESS_TERMCAP_us (set_color -o green)
 
 # Alias
-. roles/fish/files/alias.fish
+. ~/ansible-provision/roles/fish/files/alias.fish
