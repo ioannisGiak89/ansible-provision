@@ -23,3 +23,6 @@ alias gwl="watch -n5 golint (go list ./... | grep -v vendor | grep -v proto)"
 
 # Copy shh key
 alias cps="pbcopy < ~/.ssh/id_rsa.pub"
+
+# Navigation
+alias ll="ls -ahl"
