@@ -2,3 +2,12 @@
 *~
 *.swp
 .idea/
+*.iml
+.gradle/
+build/
+out/
+docker-compose.override.yml
+config/application.yml
+logs_*
+idea-config.js
+ig_*
